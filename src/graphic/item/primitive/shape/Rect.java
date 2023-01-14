@@ -2,10 +2,9 @@ package graphic.item.primitive.shape;
 
 import graphic.point.Point;
 
-import javax.swing.*;
 import java.awt.*;
 
-public class Rect extends Shape{
+public class Rect extends Shape {
     private Point position;
     private int width, height;
 

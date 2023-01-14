@@ -1,5 +1,6 @@
 import graphic.Scene;
 import graphic.item.Item;
+import graphic.item.ItemBBDecorator;
 import graphic.item.complex.ComplexItem;
 import graphic.item.primitive.Segment;
 import graphic.item.primitive.shape.Circle;
@@ -10,6 +11,7 @@ import graphic.item.text.TextItem;
 import graphic.point.Point;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Main {

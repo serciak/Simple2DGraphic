@@ -3,6 +3,7 @@ package graphic.item;
 import graphic.point.Point;
 
 import java.awt.*;
+import java.util.Arrays;
 
 public abstract class Item {
 
@@ -20,5 +21,14 @@ public abstract class Item {
         g.setColor(Color.RED);
         g.drawRect(bb[0].getX(), bb[0].getY(), bb[1].getX() - bb[0].getX(), bb[3].getY() - bb[0].getY());
         g.setColor(Color.BLACK);
+    }
+
+    public boolean contains(Point p) {
+        Point[] bb = getBoundingBox();
+        System.out.println(Arrays.toString(bb));
+        System.out.println(p);
+
+        return p.getX() > bb[0].getX() && p.getY() > bb[0].getY() &&
+                p.getX() < bb[2].getX() && p.getY() < bb[2].getY();
     }
 }
