@@ -5,7 +5,6 @@ import graphic.point.Point;
 import java.awt.*;
 
 public class ItemDecorator extends Item {
-
     private Item item;
 
     ItemDecorator(Item item) {
