@@ -4,10 +4,11 @@ import graphic.point.Point;
 
 import java.awt.*;
 
-public class Triangle extends Shape {
+public class Triangle extends Shape implements SingletonTriangle {
     private Point p1, p2, p3;
+    private static Triangle instance;
 
-    public Triangle(Point p1, Point p2, Point p3, boolean filled) {
+    private Triangle(Point p1, Point p2, Point p3, boolean filled) {
         super(filled);
         this.p1 = p1;
         this.p2 = p2;
@@ -45,5 +46,31 @@ public class Triangle extends Shape {
                     new int[]{p1.getY(), p2.getY(), p3.getY()}, 3);
         else g.drawPolygon(new int[]{p1.getX(), p2.getX(), p3.getX()},
                 new int[]{p1.getY(), p2.getY(), p3.getY()}, 3);
+    }
+
+    public static Triangle getInstance(Point p1, Point p2, Point p3, boolean filled) {
+        if(instance == null) {
+            instance = new Triangle(p1, p2, p3, filled);
+        }
+        else {
+            instance.setP1(p1);
+            instance.setP2(p2);
+            instance.setP3(p3);
+            instance.setFilled(filled);
+        }
+
+        return instance;
+    }
+
+    private void setP1(Point p1) {
+        this.p1 = p1;
+    }
+
+    private void setP2(Point p2) {
+        this.p2 = p2;
+    }
+
+    private void setP3(Point p3) {
+        this.p3 = p3;
     }
 }

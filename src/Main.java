@@ -18,7 +18,8 @@ public class Main {
         scene.addItem(new Rect(new Point(50, 50), 100, 50, true));
         scene.addItem(new Circle(new Point(300, 300), 50, true));
         scene.addItem(new StarPolygon(new Point(200, 100), 50, 5, false));
-        scene.addItem(new Triangle(new Point(400, 300), new Point(600, 200), new Point(700, 550), true));
+        scene.addItem(Triangle.getInstance(new Point(400, 300), new Point(600, 200), new Point(700, 550), true));
+        scene.addItem(Triangle.getInstance(new Point(20, 40), new Point(100, 200), new Point(40, 120), true));
         scene.addItem(new Segment(new Point(100, 100), new Point(700, 500)));
         scene.addItem(new TextItem(new Point(190, 90), "star"));
         List<Item> items = new ArrayList<>();
