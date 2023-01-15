@@ -25,10 +25,8 @@ public abstract class Item {
 
     public boolean contains(Point p) {
         Point[] bb = getBoundingBox();
-        System.out.println(Arrays.toString(bb));
-        System.out.println(p);
 
-        return p.getX() > bb[0].getX() && p.getY() > bb[0].getY() &&
-                p.getX() < bb[2].getX() && p.getY() < bb[2].getY();
+        return p.getX() >= bb[0].getX() && p.getY() >= bb[0].getY() &&
+                p.getX() <= bb[2].getX() && p.getY() <= bb[2].getY();
     }
 }

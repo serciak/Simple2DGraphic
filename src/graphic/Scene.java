@@ -49,7 +49,8 @@ public class Scene extends JPanel implements MouseListener {
 
     @Override
     public void mouseClicked(MouseEvent e) {
-        Point p = new Point(e.getX(), e.getY());
+        Point p = new Point(e.getX(), e.getY() - 30);
+        System.out.println(p);
 
         for(int i = 0; i < items.size(); i++) {
             if(items.get(i).contains(p)) {
